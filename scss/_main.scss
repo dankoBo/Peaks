@@ -1,0 +1,231 @@
+@mixin button-style {
+    background-color: $buttonColor;
+    border: none;
+    color: $colorWhite;
+    padding: 14px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@mixin link-style {
+    color: $linkColor;
+    font-size: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $pageBackgroundColor;
+}
+
+.header {
+    background: $headerBackgroundImage;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-bottom-right-radius: 40%;
+    height: 600px;
+    padding: 20px 0 0 100px;
+
+    &-wrap {
+        width: 440px;
+    }
+
+    .landing-logo {
+        display: flex;
+        color: $colorWhite;
+
+        p {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 10px;
+            font-family: $fontFamily;
+            font-size: 22px;
+        }
+
+        span {
+            font-size: 10px
+        }
+    }
+
+    &_heading {
+        font-family: $titleFont;
+        color: $titleColor;
+        font-size: 40px;
+        font-weight: map-get($font-weights, "bold-header");
+        line-height: 40px;
+        margin: 50px 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            background-color: $textBackgroundColor;
+            width: 170px;
+            height: 30px;
+            margin-top: 45px;
+            opacity: 40%;
+        }
+    }
+
+    &_text {
+        width: 520px;
+        margin-bottom: 50px;
+        font-family: $fontFamily;
+        color: $colorWhite;
+    }
+
+    &_button {
+        @include button-style;
+    }
+
+    .login {
+        @include link-style;
+        margin-left: 100px;
+    }
+}
+
+.section {
+    
+    &_text {
+        text-align: center;
+        font-family: $titleFont;
+        font-size: 34px;
+        font-weight: map-get($font-weights, "text");
+        margin: 30px 0;
+        color: $titleColor;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            background-color: $textBackgroundColor;
+            width: 170px;
+            height: 40px;
+            opacity: 50%;
+            margin-left: 180px;
+        }
+    }   
+
+    &_card {
+        width: 45%;
+        padding: 15px 50px 15px 15px;
+        background-color: $cardBackgroundColor;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &_card_img {
+        width: 300px;
+    }
+
+    &_card_right_container {
+        width: 400px;
+        text-align: center;
+    }
+
+    &_card_heading {
+        font-family: $titleFont;
+        font-size: 20px;
+        color: $colorWhite;
+        margin-bottom: 30px;
+    }
+
+    &_card_text {
+        font-family: $fontFamily;
+        margin-bottom: 20px;
+        text-align: justify;
+        @extend .section_banner_text;
+    }
+
+    &_link {
+        @include link-style;
+    }
+
+    &_banner {
+        width: 50%;
+        background: $gradient;
+        margin: 0 auto;
+        border-radius: 6px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        transform: translateY(30%);
+        color: $titleColor;
+    }
+
+    &_banner_text_wrap {
+        width: 300px;
+    }
+
+    &_banner_heading {
+        font-family: $titleFont;
+        font-weight: bold;
+        font-size: 20px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            background-color: $textBackgroundColor;
+            width: 48px;
+            height: 22px;
+            opacity: 50%;
+            margin-left: 80px;
+        }
+    }
+
+    &_banner_button {
+        @include button-style;
+    }
+
+    &_banner_text {
+        color: $colorWhite;
+    }
+}
+
+.footer {
+    background-color: $footerBgColor;
+
+    &-wrap {
+        display: flex;
+        height: 150px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &_logo {
+        display: flex;
+        color: $colorWhite;
+
+        p {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 10px;
+            font-family: $fontFamily;
+            font-size: 22px;
+        }
+
+        span {
+            font-size: 10px;
+        }
+    }
+
+    &_text {
+        width: 300px;
+        color: $colorWhite;
+        font-family: $fontFamily;
+    }
+
+    &-cr {
+        color: $colorWhite;
+        font-family: $fontFamily;
+    }
+}
